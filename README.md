@@ -11,7 +11,31 @@
 
 VNC端口为``` 1``` 或者``` 5901``` ,可自行尝试连接.(成功后VNC功能会消失.)
 
-目前CentOS系统只支持任意版本重装为 CentOS 6.x 及以下版本.
+~~目前CentOS系统只支持任意版本重装为 CentOS 6.x 及以下版本.~~
+傻瓜式一键脚本目前支持CentOS 6-8,Debian 7-10,Ubuntu 14-18,windows 7/2003/2008/2012/2016/2019，具体账号密码为：
+CentOS 7 (DD) 用户名：root 密码：Pwd@CentOS
+CentOS 6 (阿里云镜像) 用户名：root 密码：MoeClub.org
+CentOS 6 用户名：root 密码：MoeClub.org
+Debian 7 x32 用户名：root 密码：MoeClub.org
+Debian 8 x64 用户名：root 密码：MoeClub.org
+Debian 9 x64 用户名：root 密码：MoeClub.org
+Debian 10 x64 用户名：root 密码：cxthhhhh.com
+Ubuntu 14.04x64 用户名：root 密码：MoeClub.org
+Ubuntu 16.04x64 用户名：root 密码：MoeClub.org
+Ubuntu 18.04x64 用户名：root 密码：MoeClub.org
+萌咖Win7x64 用户名:Administrator  密码：Vicer
+Win2019 By:MeowLove  密码：cxthhhhh.com
+Win2016 By:MeowLove  密码：cxthhhhh.com
+Win2012 R2 By:MeowLove  密码：cxthhhhh.com
+Win2008 R2 By:MeowLove  密码：cxthhhhh.com
+Windows 7 Vienna By:MeowLove  密码：cxthhhhh.com
+Windows 2003 Vienna By:MeowLove  密码：cxthhhhh.com
+Win7x32 By:老司机  用户名:Administrator  密码：Windows7x86-Chinese
+Win-2003x32 By:老司机  用户名:Administrator  密码：WinSrv2003x86-Chinese
+Win2008x64 By:老司机  用户名:Administrator  密码：WinSrv2008x64-Chinese
+Win2012R2x64 By:老司机  用户名:Administrator  密码：WinSrv2012r2
+CentOS 8 用户名：root 密码：cxthhhhh.com 推荐512M以上使用
+自定义安装其他版本请使用：bash InstallNET.sh -dd '您的直连'，InstallNET.sh的具体用法请看 ## 下载及说明
 
 特别注意:OpenVZ构架不适用.
 
@@ -172,7 +196,7 @@ bash InstallNET.sh -c 6.9 -v 64 -a --mirror 'http://mirror.centos.org/centos'
 ### GD直连获取方法
 1.下载脚本
 ```
-wget -N --no-check-certificate https://raw.githubusercontent.com/x2009again/DDWIN/master/gdlink.sh && chmod +x gdlink.sh && ./gdlink.sh
+wget -N --no-check-certificate https://raw.githubusercontent.com/veip007/DDWIN/master/gdlink.sh && chmod +x gdlink.sh && ./gdlink.sh
 ```
 2.使用方法
 ```
