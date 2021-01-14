@@ -1,6 +1,6 @@
 #!/bin/sh
 
-MAINIP=$(ip route get 1 | awk '{print $NF;exit}')
+MAINIP=$(ip route get 1 | awk '{print $7;exit}')
 GATEWAYIP=$(ip route | grep default | awk '{print $3}')
 SUBNET=$(ip -o -f inet addr show | awk '/scope global/{sub(/[^.]+\//,"0/",$4);print $4}' | head -1 | awk -F '/' '{print $2}')
 
