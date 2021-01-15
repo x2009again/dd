@@ -95,14 +95,14 @@ goto MoeClub
 )
 :MoeClub_Win8.1EMB
 set IMG_URL=https://api.moeclub.org/redirect/loader/Win8.1EMB
-set 7za_SHA1=cfd7079a9b268d84b856dc668edbb9ab9ef35312
-set INITRD_SHA1=5e7bb87a8fdbf978202433b7c48e0f49a5d1556c
-set VMLINUZ_SHA1=113b23f32aa2b90570a2bace0a0c464156d810d7
+set INITRD_SHA1=0032B38A6E0C3EC9CC2E3FDCC68C7CC394ED68EA
+set VMLINUZ_SHA1=C84BF89869868B0325F56F1C0E62604A83B9443F
 goto Download
 :MoeClub_Linux
 set IMG_URL=https://raw.githubusercontent.com/x2009again/dd/master/
-set INITRD_SHA1=899F9F00A4932827A92D58583734647E4A6BC0D4
-set VMLINUZ_SHA1=85DA55C0C03BA698BF7F4184961F4E2E6DCA36F3
+set ZA_SHA1=CFD7079A9B268D84B856DC668EDBB9AB9EF35312
+set INITRD_SHA1=5E7BB87A8FDBF978202433B7C48E0F49A5D1556C
+set VMLINUZ_SHA1=113B23F32AA2B90570A2BACE0A0C464156D810D7
 goto Download
 :Download
 if %use_ps% equ 1 (
@@ -110,7 +110,7 @@ echo.
 echo Downloading 'initrd.img'...
 call:DownloadFile "!IMG_URL!/7za.exe","%SystemDrive%\win32-loader\7za.exe"
 call:CheckFile "%SystemDrive%\win32-loader\7za.exe"
-call:CheckSUM "%SystemDrive%\win32-loader\7za.exe","%7za_SHA1%"
+call:CheckSUM "%SystemDrive%\win32-loader\7za.exe","%ZA_SHA1%"
 call:DownloadFile "!IMG_URL!/initrd.z01","%SystemDrive%\win32-loader\initrd.z01"
 call:CheckFile "%SystemDrive%\win32-loader\initrd.z01"
 call:DownloadFile "!IMG_URL!/initrd.z02","%SystemDrive%\win32-loader\initrd.z02"
@@ -121,6 +121,11 @@ call:DownloadFile "!IMG_URL!/initrd.zip","%SystemDrive%\win32-loader\initrd.zip"
 call:CheckFile "%SystemDrive%\win32-loader\initrd.zip"
 C:\win32-loader\7za e C:\win32-loader\initrd.zip  -OC:\win32-loader
 call:CheckSUM "%SystemDrive%\win32-loader\initrd.img","%INITRD_SHA1%"
+del /S /F /Q "%SystemDrive%\win32-loader\7za.exe" >NUL 2>NUL
+del /S /F /Q "%SystemDrive%\win32-loader\initrd.z01" >NUL 2>NUL
+del /S /F /Q "%SystemDrive%\win32-loader\initrd.z02" >NUL 2>NUL
+del /S /F /Q "%SystemDrive%\win32-loader\initrd.z03" >NUL 2>NUL
+del /S /F /Q "%SystemDrive%\win32-loader\initrd.zip" >NUL 2>NUL
 echo Downloading 'vmlinuz'...
 call:DownloadFile "!IMG_URL!/vmlinuz","%SystemDrive%\win32-loader\vmlinuz"
 call:CheckFile "%SystemDrive%\win32-loader\vmlinuz"
