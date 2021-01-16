@@ -62,7 +62,7 @@ CentOS 8 用户名：root 密码：cxthhhhh.com 推荐512M以上使用
 
 特别注意:OpenVZ构架不适用.
 
-## 傻瓜式一键脚本
+## linux dd傻瓜式一键脚本
 ```
 ##镜像文件在OneDrive
 wget -N --no-check-certificate https://raw.githubusercontent.com/x2009again/dd/master/dd-od.sh && chmod +x dd-od.sh && ./dd-od.sh
@@ -71,21 +71,35 @@ wget -N --no-check-certificate https://raw.githubusercontent.com/x2009again/dd/m
 wget -N --no-check-certificate https://raw.githubusercontent.com/x2009again/dd/master/dd-gd.sh && chmod +x dd-gd.sh && ./dd-gd.sh
 
 ```
+## Windows to Linux 一键脚本（MoeClub大佬的脚本修改版，Debian8停止维护了，所以我改为了Debian10）
+```
+下载win32loader.bat，直接点击运行，重启后就会自动进入安装debian10系统，如果是非dhcp模式且无VNC的需要先定制镜像，然后指定镜像来安装为Linux，有VNC的可以在安装系统时手动设置ip等配置。
 
-## 关于debian8源报错
+linux生成指定debian镜像示例（注意需要使用纯净的系统来操作，执行后普通用户会无法登录ssh，提示没有权限，所以建议使用临时系统来操作）：
+
+bash InstallNET.sh -d 10 -v 64 -a --mirror 'http://ftp.debian.org/debian/' -firmware --loader
+
+然后复制出/root/loader 下的initrd.img和vmlinuz文件到%SystemDrive%\win32-loader目录下，一般是C盘的win32-loader目录下，
+
+root默认密码：MoeClub.org，也可以在上面的命令中加入参数-p来自定义密码
+
+```
+
+## 关于debian10源报错
 
 在脚本中可以添加 --mirror 参数切换源。
 目前可用的源:
 ```
+--mirror 'http://mirrors.aliyun.com/debian/'
 --mirror 'http://cpgs.fdcservers.net/debian/'
 --mirror 'http://proyectos.uls.edu.sv/debian/'
 --mirror 'http://debian.cabletel.com.mk/debian/'
 --mirror 'http://komo.padinet.com/debian/'
 --mirror 'http://www.debian.uz/debian/'
 ```
-安装debian8 示例:
+安装debian10 示例:
 ```
-bash InstallNET.sh -d 8 -v 64 -a --mirror 'http://debian.cabletel.com.mk/debian/'
+bash InstallNET.sh -d 10 -v 64 -a --mirror 'http://debian.cabletel.com.mk/debian/'
 ```
 安装dd镜像 示例:
 ```
@@ -114,7 +128,7 @@ yum update
 
 ## 快速使用示例:
 ``` 	
-bash <(wget --no-check-certificate -qO- 'https://raw.githubusercontent.com/x2009again/dd/master/InstallNET.sh') -d 8 -v 64 -a
+bash <(wget --no-check-certificate -qO- 'https://raw.githubusercontent.com/x2009again/dd/master/InstallNET.sh') -d 10 -v 64 -a
 ``` 
 
 ## 下载及说明:
