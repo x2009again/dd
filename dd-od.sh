@@ -10,23 +10,23 @@ NETMASK="$(( (value >> 24) & 0xff )).$(( (value >> 16) & 0xff )).$(( (value >> 8
 wget --no-check-certificate -qO InstallNET.sh 'https://raw.githubusercontent.com/veip007/dd/master/InstallNET.sh' && chmod a+x InstallNET.sh && wget -N --no-check-certificate https://github.com/veip007/Network-Reinstall-System-Modify/raw/master/Network-Reinstall-System-Modify.sh && chmod a+x Network-Reinstall-System-Modify.sh
 
 clear
-echo "                                                           "
-echo "###########################################################"
-echo "#                                                         #"
-echo "#  Auto DD                                                #"
-echo "#                                                         #"
-echo "#  Last Modified: 2019-12-05                              #"
-echo "#  Linux默认密码：MoeClub.org  or  cxthhhhh.com           #"
-echo "#  Supported by MoeClub                                   #"
-echo "#                                                         #"
-echo "###########################################################"
-echo "                                                           "
+echo "                                                                   "
+echo "###################################################################"
+echo "#                                                                 #"
+echo "#  Auto DD                                                        #"
+echo "#                                                                 #"
+echo "#  Last Modified: 2019-12-05                                      #"
+echo "#  Linux默认密码：MoeClub.org  or  cxthhhhh.com or   cosmiccat     #"
+echo "#  Supported by MoeClub                                           #"
+echo "#                                                                 #"
+echo "###################################################################"
+echo "                                                                   "
 echo "IP: $MAINIP"
 echo "网关: $GATEWAYIP"
 echo "网络掩码: $NETMASK"
 echo ""
 echo "请选择您需要的镜像包:"
-echo "  1) CentOS 7 (DD) 用户名：root 密码：Pwd@CentOS"
+echo "  1) CentOS 7.5 (需要nvc或者dhcp) 用户名：root 密码：cosmiccat"
 echo "  2) CentOS 6 (阿里云镜像) 用户名：root 密码：MoeClub.org"
 echo "  3) CentOS 6 用户名：root 密码：MoeClub.org"
 echo "  4) Debian 7 x32 用户名：root 密码：MoeClub.org"
@@ -53,7 +53,7 @@ echo ""
 echo -n "请输入编号: "
 read N
 case $N in
-  1) echo "Password: Pwd@CentOS" ; read -s -n1 -p "Press any key to continue..." ; bash InstallNET.sh --ip-addr $MAINIP --ip-gate $GATEWAYIP --ip-mask $NETMASK -dd 'https://api.moetools.net/get/centos-7-image' ;;
+  1) echo "Password: cosmiccat" ; read -s -n1 -p "Press any key to continue..." ; bash InstallNET.sh --ip-addr $MAINIP --ip-gate $GATEWAYIP --ip-mask $NETMASK -dd 'https://od1.cosmiccat.net/DD/Centos7-x86_64-minimal.gz' ;;
   2) bash InstallNET.sh -c 6.9 -v 64 -a --mirror 'http://mirrors.aliyun.com/centos-vault' --ip-addr $MAINIP --ip-gate $GATEWAYIP --ip-mask $SUBNET ;;
   3) bash InstallNET.sh -c 6.9 -v 64 -a --ip-addr $MAINIP --ip-gate $GATEWAYIP --ip-mask $NETMASK ;;
   4) bash InstallNET.sh -d 7 -v 32 -a --ip-addr $MAINIP --ip-gate $GATEWAYIP --ip-mask $NETMASK ;;

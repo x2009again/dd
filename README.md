@@ -99,11 +99,11 @@ root默认密码：MoeClub.org，也可以在上面的命令中加入参数-p来
 ```
 安装debian10 示例:
 ```
-bash InstallNET.sh -d 10 -v 64 -a --mirror 'http://debian.cabletel.com.mk/debian/'
+bash InstallNET.sh -d 10 -v 64 -a --mirror 'http://ftp.debian.org/debian/'
 ```
 安装dd镜像 示例:
 ```
-bash InstallNET.sh -dd "[URL]" --mirror 'http://debian.cabletel.com.mk/debian/'
+bash InstallNET.sh -dd "[URL]" --mirror 'http://ftp.debian.org/debian/'
 ```
 
 
@@ -111,7 +111,7 @@ bash InstallNET.sh -dd "[URL]" --mirror 'http://debian.cabletel.com.mk/debian/'
 
 ``` 
 #Debian/Ubuntu:
-apt-get install -y xz-utils openssl gawk file
+apt-get install -y xz-utils openssl gawk file wget
  
 #RedHat/CentOS:
 yum install -y xz openssl gawk file
